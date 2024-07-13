@@ -15,7 +15,7 @@ const RequireUser = ({ allowedRoles }: { allowedRoles: string[] }) => {
   const loading = isLoading || isFetching;
 
   const user = userApi.endpoints.getMe.useQueryState(null, {
-    selectFromResult: ({ data }) => data,
+    selectFromResult: ({ data }) => data!,
   });
 
   if (loading) {
